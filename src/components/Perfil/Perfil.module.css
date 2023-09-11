@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 0 40px;
+    padding: 50px 0 40px;
     margin-bottom: 80px;
 }
 
@@ -16,5 +16,6 @@
 
 .name {
     font-size: 18px;
-    color: var(--corSecundaria);;
+    color: var(--corSecundaria);
+    margin-top: 10px;
 }
