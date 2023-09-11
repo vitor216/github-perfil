@@ -5,6 +5,7 @@ import styles from './ReposList.module.css';
 const ReposList = ({ nomeUsuario }) => {
     const [repos, setrepos] = useState([]);
     const [estaCarregando, setEstaCarregando] = useState(true);
+    const [deuerro, setDeuerro] = useState(false);
 
     useEffect(() => {
         setEstaCarregando(true);
@@ -17,9 +18,15 @@ const ReposList = ({ nomeUsuario }) => {
             }, 3000);
             
         })
+        .catch(e => {
+            setDeuerro(true);
+        })
     }, [nomeUsuario]);
     return (
         <div className="container">
+            {deuerro ? (
+                <h1>Usuario não encontrado</h1>
+            ) :()}
         {estaCarregando ? (
             <h1>Carregando...</h1>
         ) :(
